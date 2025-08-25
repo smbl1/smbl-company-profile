@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMBL Company</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        .header-bg {
+            background-image: url('https://placehold.co/1920x800/223E6C/ffffff?text=INNOVATIVE+%26+COLLABORATIVE');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .header-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .section-bg-dark {
+            background-color: #1a202c;
+            color: #ffffff;
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .milestone-container {
+            position: relative;
+        }
+        .milestone-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .milestone-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #3182ce;
+            border-radius: 50%;
+            border: 3px solid #63b3ed;
+        }
+        .milestone-item::after {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 1.5rem;
+            height: calc(100% - 1.5rem);
+            width: 3px;
+            background-color: #4a5568;
+        }
+        .milestone-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header-bg text-white py-20 relative">
+        <div class="container mx-auto px-4 z-10 relative">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">SMBL CO., LTD</h1>
+            <p class="text-xl sm:text-2xl mb-8">INNOVATIVE & COLLABORATIVE</p>
+            <a href="#about" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">더 알아보기</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">회사 소개</h2>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed mb-4">SMBL은 2005년에 설립된 베트남 내 100% 한국 투자 마케팅 회사입니다. 20년 가까이 베트남-한국 양방향 무역 증진 및 투자 컨설팅을 전문으로 하며, 다양한 산업 분야(산업, 농업, 서비스 등)에서 풍부한 경험을 축적했습니다.</p>
+                    <p class="text-lg leading-relaxed mb-4">현재 SMBL은 한국의 주요 정부/비정부 기관(조달청, 인천경제청 등) 및 대기업(현대, 포스코, 효성 등)뿐만 아니라 베트남의 1,000개 이상의 정부 부처, 기관, 기업들과 신뢰 관계를 구축하고 있습니다.</p>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/223E6C/ffffff?text=About+Us" alt="About Us" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="section-bg-dark py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">MISSION</h3>
+                    <p class="text-lg leading-relaxed">한국 기업/기관의 인도차이나 비즈니스 관문, 베트남 기업/기관의 한국 비즈니스 관문 역할을 수행합니다. 최고의 한국-베트남 컨설팅 및 비즈니스 연결을 통해 무역 진흥, 마케팅, 판매 및 유통 분야에서 뛰어난 기업으로 성장하는 것을 목표로 합니다.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">VISION</h3>
+                    <p class="text-lg leading-relaxed">최고 수준의 전문성을 바탕으로 혁신적이고 경쟁력 있는 원스톱 솔루션을 제공하여 고객, 파트너, 직원에게 탁월한 가치를 창출합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Business Section -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">주요 사업 영역</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Investment Consulting Card -->
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold mb-2">투자 컨설팅</h3>
+                    <p class="text-gray-600">한국과 베트남의 정부 기관, 단체, 기업을 대상으로 맞춤형 투자 컨설팅을 제공합니다.</p>
+                </div>
+                <!-- 1-1 Business Matching Card -->
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold mb-2">1:1 비즈니스 매칭</h3>
+                    <p class="text-gray-600">한국-베트남 기업 간의 효과적인 비즈니스 매칭 이벤트를 주최하고, 맞춤형 파트너를 발굴합니다.</p>
+                </div>
+                <!-- Market Research Card -->
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold mb-2">시장 조사</h3>
+                    <p class="text-gray-600">베트남 및 한국 시장에 대한 심층적인 시장 조사, 타당성 연구, 경쟁사 분석 보고서를 제공합니다.</p>
+                </div>
+                <!-- Local Representative Card -->
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold mb-2">현지 대표</h3>
+                    <p class="text-gray-600">기업의 공식 현지 대리인 역할을 수행하며, 효과적인 시장 진출 전략을 컨설팅합니다.</p>
+                </div>
+                <!-- Sales & Distribution Card -->
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold mb-2">판매 및 유통</h3>
+                    <p class="text-gray-600">한국 제품의 베트남 직접 판매 및 유통 채널 구축을 지원합니다.</p>
+                </div>
+                <!-- Exhibition & Seminar Card -->
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold mb-2">전시회/세미나 개최</h3>
+                    <p class="text-gray-600">신제품 런칭 세미나, VIP 초청, 바이어 매칭 등 맞춤형 이벤트를 기획하고 실행합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestones Section -->
+    <section id="milestones" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">연혁</h2>
+            <div class="milestone-container max-w-2xl mx-auto">
+                <!-- 2024 -->
+                <div class="milestone-item mb-8">
+                    <div class="text-xl font-bold text-gray-700 mb-2">2024</div>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>전라북도 베트남 비즈니스 센터 공식 글로벌 파트너</li>
+                        <li>한국 중소기업기술정보진흥원(KOSME) 베트남 글로벌 파트너</li>
+                    </ul>
+                </div>
+                <!-- 2023 -->
+                <div class="milestone-item mb-8">
+                    <div class="text-xl font-bold text-gray-700 mb-2">2023</div>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>베트남-한국 비즈니스 매칭 150+ 프로젝트 달성</li>
+                        <li>롱안성 및 하이즈엉성 투자 유치 전략 파트너</li>
+                    </ul>
+                </div>
+                <!-- 2022 -->
+                <div class="milestone-item mb-8">
+                    <div class="text-xl font-bold text-gray-700 mb-2">2022</div>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>사이공텔(SAIGONTEL) 투자 유치 전략 파트너</li>
+                        <li>비글라세라(VIGLACERA) 투자 유치 전략 파트너</li>
+                    </ul>
+                </div>
+                <!-- 2020 -->
+                <div class="milestone-item mb-8">
+                    <div class="text-xl font-bold text-gray-700 mb-2">2020</div>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>베트남 기업의 한국 시장 진출 지원 프로그램 "Jump to Korea" 실행</li>
+                        <li>다낭시 투자 유치 웨비나 개최</li>
+                    </ul>
+                </div>
+                <!-- 2018 -->
+                <div class="milestone-item mb-8">
+                    <div class="text-xl font-bold text-gray-700 mb-2">2018</div>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>경영 컨설팅 분야로 사업 확장</li>
+                        <li>한국-베트남 의료 협력 네트워크 프로그램 공동 주최</li>
+                    </ul>
+                </div>
+                <!-- 2013 -->
+                <div class="milestone-item mb-8">
+                    <div class="text-xl font-bold text-gray-700 mb-2">2013</div>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>할리스커피 베트남 프랜차이즈 시장 진출 컨설팅</li>
+                        <li>삼성 벤더사를 위한 미얀마 투자 기회 발굴</li>
+                    </ul>
+                </div>
+                <!-- 2005 -->
+                <div class="milestone-item mb-8">
+                    <div class="text-xl font-bold text-gray-700 mb-2">2005</div>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>SMBL CO., LTD. 설립</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">연락처</h2>
+            <div class="max-w-xl mx-auto text-center">
+                <p class="text-lg mb-4">SMBL은 베트남과 한국을 잇는 비즈니스 파트너로서 성공적인 성장을 지원합니다.</p>
+                <div class="grid sm:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <p class="font-bold text-lg">전화</p>
+                        <p class="text-gray-600">84-24-37877700</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-lg">이메일</p>
+                        <p class="text-gray-600">smbl.headoffice@gmail.com</p>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <p class="font-bold text-lg">주소</p>
+                        <p class="text-gray-600">19th Floor, Room 1911, Keangnam Landmark 72, Pham Hung, Nam Tu Liem, Hanoi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>© 2024 SMBL CO., LTD. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
