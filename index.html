@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -17,10 +19,11 @@
             color: #333;
         }
         .header-bg {
-            background-image: url('https://placehold.co/1920x800/223E6C/ffffff?text=INNOVATIVE+%26+COLLABORATIVE');
+            background-image: url('https://placehold.co/1920x800/223E6C/ffffff?text=SMBL+Company+Profile');
             background-size: cover;
             background-position: center;
             position: relative;
+            height: 80vh; /* Adjust height for a more immersive feel */
         }
         .header-bg::before {
             content: '';
@@ -72,16 +75,40 @@
         .milestone-item:last-child::after {
             display: none;
         }
+        .image-gallery {
+            column-count: 1;
+            column-gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .image-gallery {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .image-gallery {
+                column-count: 3;
+            }
+        }
+        .gallery-image {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="header-bg text-white py-20 relative">
-        <div class="container mx-auto px-4 z-10 relative">
+    <!-- Header Section (Image-focused) -->
+    <header class="header-bg text-white flex items-center justify-center relative">
+        <div class="z-10 text-center">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">SMBL CO., LTD</h1>
-            <p class="text-xl sm:text-2xl mb-8">INNOVATIVE & COLLABORATIVE</p>
-            <a href="#about" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">더 알아보기</a>
+            <p class="text-xl sm:text-2xl">INNOVATIVE & COLLABORATIVE</p>
         </div>
     </header>
 
@@ -95,13 +122,13 @@
                     <p class="text-lg leading-relaxed mb-4">현재 SMBL은 한국의 주요 정부/비정부 기관(조달청, 인천경제청 등) 및 대기업(현대, 포스코, 효성 등)뿐만 아니라 베트남의 1,000개 이상의 정부 부처, 기관, 기업들과 신뢰 관계를 구축하고 있습니다.</p>
                 </div>
                 <div>
-                    <img src="https://placehold.co/600x400/223E6C/ffffff?text=About+Us" alt="About Us" class="rounded-lg shadow-lg w-full h-auto">
+                    <img src="https://placehold.co/600x400/223E6C/ffffff?text=About+Us+Image" alt="About Us" class="rounded-lg shadow-lg w-full h-auto">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission & Vision Section -->
+    <!-- Mission & Vision Section (Text-based for clarity) -->
     <section class="section-bg-dark py-16">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-10">
@@ -123,41 +150,74 @@
             <h2 class="text-3xl font-bold text-center mb-10">주요 사업 영역</h2>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Investment Consulting Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
-                    <h3 class="text-xl font-bold mb-2">투자 컨설팅</h3>
-                    <p class="text-gray-600">한국과 베트남의 정부 기관, 단체, 기업을 대상으로 맞춤형 투자 컨설팅을 제공합니다.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect flex items-start space-x-4">
+                    <i class="fas fa-chart-line text-blue-500 text-3xl"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">투자 컨설팅</h3>
+                        <p class="text-gray-600">한국과 베트남의 정부 기관, 단체, 기업을 대상으로 맞춤형 투자 컨설팅을 제공합니다.</p>
+                    </div>
                 </div>
                 <!-- 1-1 Business Matching Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
-                    <h3 class="text-xl font-bold mb-2">1:1 비즈니스 매칭</h3>
-                    <p class="text-gray-600">한국-베트남 기업 간의 효과적인 비즈니스 매칭 이벤트를 주최하고, 맞춤형 파트너를 발굴합니다.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect flex items-start space-x-4">
+                    <i class="fas fa-handshake text-blue-500 text-3xl"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">1:1 비즈니스 매칭</h3>
+                        <p class="text-gray-600">한국-베트남 기업 간의 효과적인 비즈니스 매칭 이벤트를 주최하고, 맞춤형 파트너를 발굴합니다.</p>
+                    </div>
                 </div>
                 <!-- Market Research Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
-                    <h3 class="text-xl font-bold mb-2">시장 조사</h3>
-                    <p class="text-gray-600">베트남 및 한국 시장에 대한 심층적인 시장 조사, 타당성 연구, 경쟁사 분석 보고서를 제공합니다.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect flex items-start space-x-4">
+                    <i class="fas fa-search text-blue-500 text-3xl"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">시장 조사</h3>
+                        <p class="text-gray-600">베트남 및 한국 시장에 대한 심층적인 시장 조사, 타당성 연구, 경쟁사 분석 보고서를 제공합니다.</p>
+                    </div>
                 </div>
                 <!-- Local Representative Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
-                    <h3 class="text-xl font-bold mb-2">현지 대표</h3>
-                    <p class="text-gray-600">기업의 공식 현지 대리인 역할을 수행하며, 효과적인 시장 진출 전략을 컨설팅합니다.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect flex items-start space-x-4">
+                    <i class="fas fa-map-marker-alt text-blue-500 text-3xl"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">현지 대표</h3>
+                        <p class="text-gray-600">기업의 공식 현지 대리인 역할을 수행하며, 효과적인 시장 진출 전략을 컨설팅합니다.</p>
+                    </div>
                 </div>
                 <!-- Sales & Distribution Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
-                    <h3 class="text-xl font-bold mb-2">판매 및 유통</h3>
-                    <p class="text-gray-600">한국 제품의 베트남 직접 판매 및 유통 채널 구축을 지원합니다.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect flex items-start space-x-4">
+                    <i class="fas fa-truck text-blue-500 text-3xl"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">판매 및 유통</h3>
+                        <p class="text-gray-600">한국 제품의 베트남 직접 판매 및 유통 채널 구축을 지원합니다.</p>
+                    </div>
                 </div>
                 <!-- Exhibition & Seminar Card -->
-                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect">
-                    <h3 class="text-xl font-bold mb-2">전시회/세미나 개최</h3>
-                    <p class="text-gray-600">신제품 런칭 세미나, VIP 초청, 바이어 매칭 등 맞춤형 이벤트를 기획하고 실행합니다.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md card-hover-effect flex items-start space-x-4">
+                    <i class="fas fa-calendar-alt text-blue-500 text-3xl"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">전시회/세미나 개최</h3>
+                        <p class="text-gray-600">신제품 런칭 세미나, VIP 초청, 바이어 매칭 등 맞춤형 이벤트를 기획하고 실행합니다.</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">주요 활동 갤러리</h2>
+            <div class="image-gallery">
+                <img src="https://placehold.co/600x400/87CEEB/333333?text=Gallery+Image+1" alt="Gallery Image 1" class="gallery-image">
+                <img src="https://placehold.co/600x800/FFA07A/333333?text=Gallery+Image+2" alt="Gallery Image 2" class="gallery-image">
+                <img src="https://placehold.co/600x500/98FB98/333333?text=Gallery+Image+3" alt="Gallery Image 3" class="gallery-image">
+                <img src="https://placehold.co/600x700/F08080/333333?text=Gallery+Image+4" alt="Gallery Image 4" class="gallery-image">
+                <img src="https://placehold.co/600x600/ADD8E6/333333?text=Gallery+Image+5" alt="Gallery Image 5" class="gallery-image">
+                <img src="https://placehold.co/600x450/DDA0DD/333333?text=Gallery+Image+6" alt="Gallery Image 6" class="gallery-image">
             </div>
         </div>
     </section>
 
     <!-- Milestones Section -->
-    <section id="milestones" class="bg-gray-100 py-16">
+    <section id="milestones" class="bg-gray-200 py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-10">연혁</h2>
             <div class="milestone-container max-w-2xl mx-auto">
@@ -241,8 +301,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 text-center">
